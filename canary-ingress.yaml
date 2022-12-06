@@ -1,4 +1,4 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: canary-demo
@@ -13,5 +13,7 @@ spec:
       paths:
       - path: /
         backend:
-          serviceName: canary-demo
-          servicePort: 80
+          service:
+            name: canary-demo
+            port: 
+              number: 80
