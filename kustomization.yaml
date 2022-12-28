@@ -3,6 +3,7 @@ kind: Kustomization
 
 resources:
 - canary-rollout.yaml
+- canary-rollout-2.yaml
 - canary-service.yaml
 - canary-ingress.yaml
 - canary-preview-service.yaml
