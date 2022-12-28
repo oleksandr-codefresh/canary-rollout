@@ -1,32 +1,30 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
-  name: canary-demo-1
-  labels: 
-    sds: sdsd
+  name: canary-extra
 spec:
-  replicas: 3
+  replicas: 1
   revisionHistoryLimit: 3
   progressDeadlineSeconds: 30
   selector:
     matchLabels:
-      app: canary-demo
+      app: canary-extra
   template:
     metadata:
       labels:
-        app: canary-demo
+        app: canary-extra
     spec:
       containers:
-        - name: canary-demo
-          # image: xeonalex/rollouts-demo:red
+        - name: canary-extra
+          image: xeonalex/rollouts-demo:red
           # image: xeonalex/rollouts-demo:green
           # image: xeonalex/rollouts-demo:orange
           # image: xeonalex/rollouts-demo:purple-broken
-          image: xeonalex/rollouts-demo:purple
+          # image: xeonalex/rollouts-demo:purple
           imagePullPolicy: Always
           ports:
             - name: http
-              containerPort: 8080
+              containerPort: 8081
               protocol: TCP
           resources:
             requests:
@@ -34,7 +32,6 @@ spec:
               cpu: 5m
   strategy:
     canary:
-      canaryService: canary-demo-preview
       steps:
         - setWeight: 20
         - pause: {duration: 10}
