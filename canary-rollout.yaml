@@ -19,8 +19,8 @@ spec:
       containers:
         - name: canary-demo
           # image: xeonalex/rollouts-demo:red
-          # image: xeonalex/rollouts-demo:green
-          image: xeonalex/rollouts-demo:orange
+          image: xeonalex/rollouts-demo:green
+          # image: xeonalex/rollouts-demo:orange
           # image: xeonalex/rollouts-demo:purple-broken
           # image: xeonalex/rollouts-demo:purple
           imagePullPolicy: Always
