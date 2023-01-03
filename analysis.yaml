@@ -9,7 +9,7 @@ spec:
   metrics:
   - name: pass-roll-2
     count: 3
-    interval: 20s
+    interval: 5s
     failureLimit: 1
     provider:
       job:
