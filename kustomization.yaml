@@ -8,3 +8,4 @@ resources:
 - canary-ingress.yaml
 - canary-preview-service.yaml
 - canary-preview-ingress.yaml
+- analysis.yaml
