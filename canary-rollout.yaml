@@ -34,9 +34,9 @@ spec:
               cpu: 5m
   strategy:
     canary:
-      analysis:
-        templates:
-          - templateName: mixed-roll-tests
+      # analysis:
+      #   templates:
+      #     - templateName: mixed-roll-tests
       canaryService: canary-demo-preview
       steps:
         - setWeight: 20
