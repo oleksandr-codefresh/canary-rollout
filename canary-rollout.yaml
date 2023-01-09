@@ -7,7 +7,7 @@ metadata:
 spec:
   replicas: 3
   revisionHistoryLimit: 3
-  progressDeadlineSeconds: 30
+  progressDeadlineSeconds: 300
   selector:
     matchLabels:
       app: canary-demo
@@ -18,9 +18,9 @@ spec:
     spec:
       containers:
         - name: canary-demo
-          image: xeonalex/rollouts-demo:red
+          # image: xeonalex/rollouts-demo:red
           # image: xeonalex/rollouts-demo:green
-          # image: xeonalex/rollouts-demo:orange
+          image: xeonalex/rollouts-demo:orange
           # image: xeonalex/rollouts-demo:purple-broken
           # image: xeonalex/rollouts-demo:purple
           imagePullPolicy: Always
@@ -40,6 +40,6 @@ spec:
       canaryService: canary-demo-preview
       steps:
         - setWeight: 20
-        - pause: {duration: 20}
+        - pause: {duration: 40}
         - setWeight: 60
-        - pause: {duration: 10}
+        - pause: {duration: 20}
