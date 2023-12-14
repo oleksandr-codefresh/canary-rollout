@@ -39,7 +39,8 @@ spec:
       #     - templateName: mixed-roll-tests
       canaryService: canary-demo-preview
       steps:
-        - setWeight: 20
-        - pause: {duration: 40}
+        # - setWeight: 20
+        # - pause: {duration: 40}
         - setWeight: 60
-        - pause: {duration: 20}
+        - pause: {}
+        # - pause: {duration: 20}
